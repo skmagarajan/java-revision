@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://sk.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://sk.com" xmlns:intf="http://sk.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://sk.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="removeFirst">
+    <complexType>
+     <sequence>
+      <element name="str" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeFirstResponse">
+    <complexType>
+     <sequence>
+      <element name="removeFirstReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeLast">
+    <complexType>
+     <sequence>
+      <element name="str" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeLastResponse">
+    <complexType>
+     <sequence>
+      <element name="removeLastReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removeLastRequest">
+
+      <wsdl:part element="impl:removeLast" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeFirstRequest">
+
+      <wsdl:part element="impl:removeFirst" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeLastResponse">
+
+      <wsdl:part element="impl:removeLastResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeFirstResponse">
+
+      <wsdl:part element="impl:removeFirstResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="StringImpl">
+
+      <wsdl:operation name="removeFirst">
+
+         <wsdl:input message="impl:removeFirstRequest" name="removeFirstRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeFirstResponse" name="removeFirstResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeLast">
+
+         <wsdl:input message="impl:removeLastRequest" name="removeLastRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeLastResponse" name="removeLastResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="StringImplSoapBinding" type="impl:StringImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="removeFirst">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeFirstRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeFirstResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeLast">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeLastRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeLastResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="StringImplService">
+
+      <wsdl:port binding="impl:StringImplSoapBinding" name="StringImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAPSk/services/StringImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
